@@ -11,10 +11,15 @@ const ProtectedRoute = ({ children, role }) => {
   if (!user) {
     return <Navigate to="/login" replace />;
   }
+  
+  if (role && user.role === "manager"){
+    return children;
+  }
 
   if (role && user.role !== role) {
     return <Navigate to="/not-verified" replace />;
   }
+
 
   if (!user.isVerified && role) {
     return <Navigate to="/not-verified" replace />;

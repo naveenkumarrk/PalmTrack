@@ -25,11 +25,11 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/not-verified" element={<NotVerified />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/neera" element={<NeeraForm />} />
-          <Route path="/neera/list" element={<NeeraList />} />
-          <Route path="/processing/create" element={<ProcessingForm />} />
-          <Route path="/processing/update" element={<ProcessingStageUpdate />} />
+          <Route path="/dashboard" element={<ProtectedRoute role="employee"> <Dashboard /></ProtectedRoute>} />
+          <Route path="/neera" element={<ProtectedRoute role="employee"> <NeeraForm /> </ProtectedRoute>} />
+          <Route path="/neera/list" element={<ProtectedRoute role="employee"><NeeraList /></ProtectedRoute>} />
+          <Route path="/processing/create" element={<ProtectedRoute role="employee"><ProcessingForm /></ProtectedRoute>} />
+          <Route path="/processing/update" element={<ProtectedRoute role="employee"><ProcessingStageUpdate /></ProtectedRoute>} />
           <Route path="/inventory" element={<ProtectedRoute role="manager"><InventoryForm /></ProtectedRoute>} />
           <Route path="/inventory/list" element={<ProtectedRoute role="manager"><InventoryList /></ProtectedRoute>} />
           <Route path="/manager" element={<ProtectedRoute role="manager"><ManagerPanel /></ProtectedRoute>} />
