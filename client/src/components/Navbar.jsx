@@ -49,9 +49,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-full flex items-center justify-center shadow-md">
-                <img src="/vite.svg" alt="" srcset="" />
+                <img src="/vite.svg" alt="" srcSet="" />
               </div>
-              <span className="font-bold text-xl text-white">PalmSugar</span>
+              <span className="font-bold text-xl text-white">PalmSugar</span> 
             </Link>
           </div>
           
